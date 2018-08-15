@@ -17,7 +17,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+function first(arr){
+  return arr[0]
+}
 
 
 
@@ -32,7 +34,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last(arr){
+  return arr.pop()
+}
 
 
 
@@ -47,7 +51,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+function looper(family){
+  for (var i = 1; i <= family.length; i++) {
+    alert(i);
+  }
+}
+looper(family)
 
 
 
@@ -62,7 +71,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
-//Code Here
+function reversedLooper(letters){
+  for (i = letters.length; i >= 1; i--) {
+    alert(i);
+  }
+}
+reversedLooper(letters)
 
 
 
@@ -77,7 +91,18 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
+function evenFinder(nums){
+  let arr = [];
+  for (let i= 0; i< nums.length; i++) {
+    if(nums[i] % 2 === 0){
+      arr.push(nums[i])
+    }
+
+  }
+  return arr
+}
+
+evenFinder(nums);
 
 
 
@@ -105,7 +130,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  let evenNumsOddNums = [[], []]
+  for (let i= 0; i< numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0){
+      evenNumsOddNums[0].push(numbersArray[i])
+    }else {
+      evenNumsOddNums[1].push(numbersArray[i])
+    }
+
+  }
+  return evenNumsOddNums;
+}
+divider(numbersArray)
+
 
 
 
@@ -126,7 +164,16 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr){
+  var rando = getRandomArbitrary();
+  console.log(rando);
+  if (arr.includes(rando)){
+    return true
+  }
+   return false
+}
+
+
 
 
 
@@ -155,8 +202,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
-
+function removeItem(myGroceryList, item) {
+  if (item === null || item === undefined) {
+    return []
+  }
+  var index = myGroceryList.indexOf(item)
+  if (index !== -1) {
+    myGroceryList.splice(index, 1)
+  }
+  return myGroceryList
+ }
+ removeItem(myGroceryList, 'pizza')
+ 
+ 
+ function addItem(myGroceryList, item) {
+  if (item === null || item === undefined) {
+    return []
+  }
+  myGroceryList.push(item)
+  return myGroceryList
+ }
+ addItem(myGroceryList, "berries")
 
 
 ////////// PROBLEM 9 //////////
@@ -181,7 +247,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers){
+  var newNumbers = [];
+  for (var i = 0; i<numbers.length; i++){
+    newNumbers.push(Number(numbers[i]));
+    newNumbers[i] += 10;
+  }
+  return newNumbers;
+}
+
+addTen(numbers);
 
 
 
@@ -258,7 +333,12 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+
+console.log(devMountainEmployees.length);
 
 
 
@@ -267,7 +347,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for(var i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name === 'Cahlan'){
+    devMountainEmployees.splice(i,1);
+  }
+}
 
 
 
@@ -279,7 +363,11 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+for(var i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name === 'Cahlan'){
+    devMountainEmployees.splice(i,1);
+  }
+}
 
 
 
